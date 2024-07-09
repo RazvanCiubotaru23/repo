@@ -4,13 +4,13 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = azurerm_resource_group.proj.name
 
   security_rule {
-    name                       = "allow_icmp"
-    priority                   = 1000
+    name                       = "allow_ssh"
+    priority                   = 101
     direction                  = "Inbound"
     access                     = "Allow"
-    protocol                   = "Icmp"
+    protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "*"
+    destination_port_range     = "22"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
