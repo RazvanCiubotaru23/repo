@@ -1,4 +1,3 @@
-
 resource "azurerm_resource_group" "proj" {
   name     = "project"
   location = "West Europe"
